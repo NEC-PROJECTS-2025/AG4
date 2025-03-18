@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Project Flowchart</title>
+    <nav class="secondary-navbar">
+        <div class="container">
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/about" class="nav-link">About</a>
+            <a href="/upload" class="nav-link">Upload Dataset</a>
+            <a href="/modelevaluationmetrics" class="nav-link">Model Evaluation Metrices</a>
+        </div>
+    </nav>
+</head>
+<body>
+    <header>
+        <h1> Flowchart</h1>
+    </header>
+    <main>
+        <figure>
+            <img src="{{ url_for('static', filename='images/flowchart.png') }}" alt="Flowchart for BGEO-TVFL">
+            <figcaption>Fig: Flowchart for BGEO-TVFL</figcaption>
+        </figure>
+    </main>
+</body>
+</html>

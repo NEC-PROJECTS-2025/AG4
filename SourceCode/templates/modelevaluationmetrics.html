@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Evaluation Metrics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background : linear-gradient(to right, #2A9D8F, #E9C46A);
+            color: #333;
+        }
+        header {
+            background-color: #264653; /* Deep teal */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .secondary-navbar {
+    padding: 10px 20px;
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    background-color: #2A9D8F; 
+    color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.secondary-navbar .nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+        .container {
+            width: 80%;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .metric-title {
+            font-weight: bold;
+            color: crimson;
+        }
+        .graph-section {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .graph-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .graph-section p {
+            font-size: 0.9rem;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Model Evaluation Metrics</h1>
+    </header>
+
+    <nav class="secondary-navbar">
+        <div class="container">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/about" class="nav-link">About</a>
+            <a href="/upload" class="nav-link">Upload Dataset</a>
+            <a href="/flowchart" class="nav-link">Project Flowchart</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Key Metrics:</h2>
+        <ul>
+            <li><span class="metric-title">Accuracy:</span> Measures the proportion of correctly classified instances to the total instances.</li>
+            <li><span class="metric-title">Precision:</span> Proportion of true positives among all positive predictions made by the model.</li>
+            <li><span class="metric-title">Recall (Sensitivity):</span> Proportion of actual positives correctly identified by the model.</li>
+            <li><span class="metric-title">F1-Score:</span> Harmonic mean of precision and recall.</li>
+            <li><span class="metric-title">AUC-ROC:</span> Represents the classifier's ability to distinguish between classes.</li>
+            <li><span class="metric-title">Average Distribution Accuracy:</span> Average accuracy of the classifier over multiple iterations.</li>
+            <li><span class="metric-title">Mean Fitness Function:</span> Average fitness value obtained after multiple iterations.</li>
+            <li><span class="metric-title">Worst Fitness Function:</span> Worst (maximum error) fitness value observed during iterations.</li>
+            <li><span class="metric-title">Average Selected Features:</span> Average number of features selected during optimization.</li>
+            <li><span class="metric-title">Best Fitness Activity:</span> Optimal (best) fitness value across iterations.</li>
+            <li><span class="metric-title">Average Computation Time:</span> Average time required to execute the algorithm.</li>
+        </ul>
+
+        <div class="graph-section">
+            <h2>Graphical Representation</h2>
+            <img src="{{ url_for('static', filename='images/evaluation-graph.png') }}" alt="Evaluation Metrics Graph">
+            <p>Fig. 1: Graph showing accuracy across different datasets and algorithms.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title> Results</title>
+    <style>
+        /* General reset and body styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Centering the content using flexbox */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full height of the viewport */
+            text-align: center; /* Center text */
+        }
+
+        /* Container to wrap the content */
+        main {
+            width: 60%; /* Set width of the container */
+            padding: 20px;
+            background-color: turquoise ; 
+            border-radius: 12px; /* Optional, for rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional, for shadow */
+        }
+
+        .secondary-navbar {
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .secondary-navbar .container {
+            display: flex;
+            justify-content: right;
+        }
+
+        .nav-link {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        .nav-link.active {
+            background-color: #555;
+        }
+
+        /* Specific styles for sections */
+        .title-info, .dataset-info, .results-list, .time-info {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .results-header .method {
+            font-weight: bold;
+            line-height: 4;
+        }
+
+        .result-item .accuracy {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="secondary-navbar">
+        <div class="container">     
+            <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+            <a href="/" class="nav-link">Home</a>
+            <a href="/about" class="nav-link">About</a>
+            <a href="/upload" class="nav-link active">Upload Dataset</a>
+            <a href="/flowchart" class="nav-link">Project Flowchart</a>
+            <a href="/modelevaluationmetrics" class="nav-link">Model Evaluation Metrices</a>
+        </div>
+    </nav>
+
+    <main> 
+        <section class="title-info">
+            <h2>Medical Data Classification Results {{ result }}</h2>
+        </section>
+
+        <section class="dataset-info">
+            <h2>Dataset: {{ dataset }}</h2>
+        </section>
+
+        <section class="results-list">
+            <div class="results-header">
+                <span class="method">Method:</span>
+                <span class="method">{{ method }}</span>
+            </div>
+
+            {% for method, accuracy in results.items() %}
+            <div class="result-item">
+                <span class="accuracy">Accuracy:</span>
+                <span class="accuracy">{{ accuracy | round(2) }}</span>
+            </div>
+            {% endfor %}
+        </section>
+        
+        <section class="time-info">
+            <p>Time Taken: {{ time }} seconds</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% block navbar %}
+<nav class="secondary-navbar">
+    <div class="container">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/flowchart" class="nav-link">Project Flowchart</a>
+        <a href="/modelevaluationmetrics" class="nav-link">Model Evaluation Metrices</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<section class="upload" style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
+    <div class="container" style="width: 50%; padding: 20px; background-color: #f9f9f9; border-radius: 12px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+        <h2 style="margin-bottom: 20px;">Upload Your Medical Dataset</h2>
+        <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data" class="upload-form">
+            
+            <!-- Select Method -->
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="method" style="display: block; margin-bottom: 10px;">Select Method:</label>
+                <select id="method" name="method" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+                    <option value="" disabled selected>-- Select a Method --</option>
+                    <option value="BGEO-TVFL">BGEO-TVFL</option>
+                    <option value="BWOA">BWOA</option>
+                    <option value="BGWO">BGWO</option>
+                    <option value="ACO">ACO</option>
+                    <option value="ABC">ABC</option>
+                </select>
+            </div>
+            
+            <!-- Choose Dataset -->
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label for="dataset" style="display: block; margin-bottom: 10px;">Choose Your Dataset:</label>
+                <input type="file" id="dataset" name="dataset" required style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+            </div>
+            
+            <!-- Submit Button -->
+            <button type="submit" class="upload-btn" style="background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">
+                Upload Dataset
+            </button>
+        </form>
+    </div>
+</section>
+{% endblock %}

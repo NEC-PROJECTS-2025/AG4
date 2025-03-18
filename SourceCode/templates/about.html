@@ -1,0 +1,114 @@
+
+{% block navbar %}
+<nav class="secondary-navbar">
+    <div class="container">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/upload" class="nav-link">Upload Dataset</a>
+        <a href="/flowchart" class="nav-link">Project Flowchart</a>
+        <a href="/modelevaluationmetrics" class="nav-link">Model Evaluation Metrices</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+
+<section class="about">
+    <div class="about-heading">
+        <h2>About the Project</h2>
+    </div>
+
+    <div class="container">
+    <p>
+        The <strong>Medical Dataset Analysis Project</strong> is designed to provide efficient and accurate tools 
+        for analyzing complex medical datasets. By combining advanced optimization algorithms with robust 
+        classification techniques, the system empowers healthcare professionals and researchers to make 
+        data-driven decisions.
+    </p>
+
+        <h3>Overview</h3>
+        <p>
+            Medical datasets often consist of a large number of features, many of which are irrelevant, 
+            redundant, or noisy. This project addresses these challenges by implementing a novel feature 
+            selection method called <strong>BGEO-TVFL</strong> (Binary Golden Eagle Optimization with Time-Varying 
+            Flight Length), paired with the <strong>K-Nearest Neighbor (KNN)</strong> classifier for accurate 
+            data classification.
+        </p>
+        
+        <h3>Key Features</h3>
+        <ul class="features-list">
+            <li>Efficient feature selection using <strong>BGEO-TVFL</strong>.</li>
+            <li>Accurate classification with <strong>KNN</strong> for medical datasets.</li>
+            <li>Comparison with other optimization techniques:
+                <ul>
+                    <li><strong>Binary Whale Optimization Algorithm (BWOA)</strong></li>
+                    <li><strong>Binary Grey Wolf Optimization (BGWO)</strong></li>
+                    <li><strong>Ant Colony Optimization (ACO)</strong></li>
+                    <li><strong>Artificial Bee Colony (ABC)</strong></li>
+                </ul>
+            </li>
+            <li>Scalable and efficient for large datasets.</li>
+            <li>Designed for practical use by healthcare professionals.</li>
+        </ul>
+
+        <h3>How It Works</h3>
+        <ol class="steps-list">
+            <li>
+                <strong>Upload Dataset:</strong> Users upload a medical dataset in CSV format.
+            </li>
+            <li>
+                <strong>Feature Selection:</strong> The BGEO-TVFL algorithm selects the most relevant features, 
+                reducing redundancy and noise.
+            </li>
+            <li>
+                <strong>Classification:</strong> The optimized dataset is classified using the KNN algorithm.
+            </li>
+            <li>
+                <strong>Comparison:</strong> The results are compared with other optimization techniques for validation.
+            </li>
+            <li>
+                <strong>Insights:</strong> The system generates actionable insights based on the analysis.
+            </li>
+        </ol>
+
+        <h3>Benefits</h3>
+        <ul class="features-list">
+            <li>Improved accuracy in medical predictions by focusing on critical features.</li>
+            <li>Reduction in computational complexity and resource usage.</li>
+            <li>Supports decision-making in healthcare with actionable insights.</li>
+            <li>Easy-to-use interface for seamless integration into workflows.</li>
+        </ul>
+
+        <h3>Applications</h3>
+        <p>
+            This project has wide-ranging applications in the medical field, including:
+        </p>
+        <ul class="features-list">
+            <li>Diagnosis of diseases using patient data.</li>
+            <li>Predictive analytics for treatment outcomes.</li>
+            <li>Risk assessment for chronic conditions.</li>
+            <li>Research and development in personalized medicine.</li>
+        </ul>
+
+        <h3>Future Enhancements</h3>
+        <p>
+            The project is a stepping stone towards more advanced systems. Planned enhancements include:
+        </p>
+        <ul class="features-list">
+            <li>Integration with deep learning models for more accurate predictions.</li>
+            <li>Support for real-time data analysis and streaming datasets.</li>
+            <li>Cloud-based deployment for scalability and accessibility.</li>
+            <li>Incorporation of additional machine learning algorithms for broader use cases.</li>
+        </ul>
+
+        <h3>Conclusion</h3>
+        <p>
+            The Medical Dataset Analysis Project represents a significant advancement in healthcare data analysis. 
+            By optimizing feature selection and improving classification accuracy, the system provides a reliable 
+            tool for medical professionals and researchers. Our ongoing commitment is to enhance the system to meet 
+            the evolving needs of the healthcare industry.
+        </p>
+    </div>
+</section>
+{% endblock %}
